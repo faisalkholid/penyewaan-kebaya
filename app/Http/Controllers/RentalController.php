@@ -64,7 +64,7 @@ class RentalController extends Controller
         }
 
         // Simpan data rental
-        Rental::create([
+        $rental = Rental::create([
             'dresses' => json_encode($dressData),
             'rental_date' => $validated['rental_date'],
             'return_date' => $validated['return_date'],
@@ -73,6 +73,11 @@ class RentalController extends Controller
             'user_phone' => $validated['user_phone'],
             'user_address' => $validated['user_address'],
         ]);
+
+        // Kurangi stok setiap dress yang disewa
+        foreach ($dresses as $dress) {
+            $dress->decrement('stock', 1);
+        }
 
         // Update semua dress menjadi unavailable
         // foreach ($dresses as $dress) {
@@ -97,14 +102,19 @@ class RentalController extends Controller
     {
         $validated = $request->validate([
             'return_date' => 'nullable|date|after_or_equal:rental_date',
-            'status' => 'required|in:ongoing,completed,cancelled',
+            'status' => 'required|in:disewa,selesai,batal,pengajuan',
         ]);
 
         $rental->update($validated);
 
-        // Jika rental selesai atau dibatalkan, kembalikan status dress
-        if (in_array($validated['status'], ['completed', 'cancelled'])) {
-            $rental->dress->update(['status' => 'available']);
+        // Jika rental selesai atau dibatalkan, kembalikan stok dress
+        if (in_array($validated['status'], ['selesai', 'batal'])) {
+            $dresses = is_array($rental->dresses) ? $rental->dresses : json_decode($rental->dresses, true);
+            if (!empty($dresses) && is_array($dresses)) {
+                foreach ($dresses as $dress) {
+                    \App\Models\Dress::where('id', $dress['id'])->increment('stock', 1);
+                }
+            }
         }
 
         return redirect()->route('rentals.index')->with('success', 'Penyewaan berhasil diupdate.');

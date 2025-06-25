@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $rentals = \App\Models\Rental::latest()->get();
+        return view('home', compact('rentals'));
     }
 }

@@ -16,9 +16,10 @@
         <div class="mb-3">
             <label for="status" class="form-label">Status</label>
             <select name="status" id="status" class="form-control" required>
-                <option value="ongoing" {{ $rental->status == 'ongoing' ? 'selected' : '' }}>Ongoing</option>
-                <option value="completed" {{ $rental->status == 'completed' ? 'selected' : '' }}>Completed</option>
-                <option value="cancelled" {{ $rental->status == 'cancelled' ? 'selected' : '' }}>Cancelled</option>
+                <option value="pengajuan" {{ $rental->status == 'pengajuan' ? 'selected' : '' }}>Pengajuan</option>
+                <option value="disewa" {{ $rental->status == 'disewa' ? 'selected' : '' }}>Disewa</option>
+                <option value="selesai" {{ $rental->status == 'selesai' ? 'selected' : '' }}>Selesai</option>
+                <option value="batal" {{ $rental->status == 'batal' ? 'selected' : '' }}>Batal</option>
             </select>
         </div>
 

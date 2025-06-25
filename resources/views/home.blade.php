@@ -1,33 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-
-                    <!-- Tombol untuk menuju ke halaman Daftar Baju -->
-                    <div class="mt-3">
-                        <a href="{{ route('dresses.index') }}" class="btn btn-primary">
-                            Lihat Daftar Baju
-                        </a>
-                        <a href="{{ route('rentals.index') }}" class="btn btn-primary">
-                            Lihat Daftar Rental
-                        </a>
-                    </div>
-                </div>
+<div class="container-fluid min-vh-100 bg-light">
+    <div class="row">
+        <!-- Main Content -->
+        <main class=" ms-sm-auto px-md-5 py-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="fw-bold">Laporan</h2>
             </div>
-        </div>
+            <div class="alert alert-info">
+                Halaman laporan belum tersedia. Fitur ini akan segera hadir!
+            </div>
+        </main>
     </div>
 </div>
 @endsection
