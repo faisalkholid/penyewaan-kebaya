@@ -1,7 +1,7 @@
 <nav class="col-md-2 d-none d-md-block bg-white sidebar shadow-sm p-0" style="min-height:100vh;">
     <div class="sidebar-sticky pt-4 px-3 d-flex flex-column align-items-start h-100">
         <div class="w-100 mb-4 px-2">
-            <span class="fs-4 fw-bold text-primary">Kebaya Rental</span>
+            <span class="fs-4 fw-bold text-primary">Yanti Kebaya</span>
         </div>
         <ul class="nav flex-column gap-2 w-100">
             <li class="nav-item">
@@ -21,7 +21,7 @@
             </li>
         </ul>
         <div class="mt-auto w-100 px-2 pb-4 small text-muted text-center" style="font-size: 0.95rem;">
-            &copy; {{ date('Y') }} Kebaya Rental
+            &copy; {{ date('Y') }} Yanti Kebaya
         </div>
     </div>
 </nav>

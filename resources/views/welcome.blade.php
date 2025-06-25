@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Salon Susan</title>
+    <title>Yanti Kebaya</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -238,7 +238,7 @@
         <!-- Konten Text -->
         <div class="container text-center" style="position: relative; z-index: 3">
             <h1 class="section-title" style="color: white" data-aos="fade-up">
-                SUSAN SALON
+                YANTI KEBAYA
             </h1>
             <p data-aos="fade-up" style="color: white" data-aos-delay="300">
                 Penyewaan Baju Adat
@@ -365,7 +365,7 @@
         <div class="container">
             <div class="row">
                 <div class="title-xlarge text-uppercase txt-fx domino">
-                    SUSAN SALON
+                    YANTI KEBAYA
                 </div>
                 <div class="collection-item d-flex flex-wrap my-5">
                     <div class="col-md-6 column-container">
@@ -376,17 +376,17 @@
                     <div class="col-md-6 column-container bg-white">
                         <div class="collection-content p-5 m-0 m-md-5">
                             <h3 class="element-title text-uppercase">
-                                Tentang Susan Salon
+                                Tentang Yanti Kebaya
                             </h3>
                             <p>
-                                Salon Susan menawarkan layanan make up
+                                Yanti Kebaya menawarkan layanan make up
                                 profesional dan penyewaan baju adat Sasak
                                 untuk berbagai acara spesial Anda. Dengan
                                 koleksi busana adat yang autentik dan riasan
                                 berkualitas, kami siap membantu Anda tampil
                                 memukau, memadukan keindahan tradisi dan
                                 sentuhan modern. Jadikan momen istimewa Anda
-                                lebih berkesan bersama Salon Susan.
+                                lebih berkesan bersama Yanti Kebaya.
                             </p>
                         </div>
                     </div>
@@ -401,10 +401,10 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="footer-menu footer-menu-001">
                         <div class="footer-intro mb-4">
-                            <h3>Susan Salon</h3>
+                            <h3>Yanti Kebaya</h3>
                         </div>
                         <p>
-                            Susan salon adalah tempat penyewaan baju adat
+                            Yanti Kebaya adalah tempat penyewaan baju adat
                             Sasak/Lombok dan rias pengantin yang ada di Desa
                             Rumak
                         </p>
@@ -456,7 +456,7 @@
                         </h5>
                         <p>
                             Jika ada pertanyaan.
-                            <a href="mailto:susansalon@gmail.com" class="item-anchor">susansalon@gmail.com.</a>
+                            <a href="mailto:yantikebaya@gmail.com" class="item-anchor">yantikebaya@gmail.com.</a>
                         </p>
                         <p>
                             Atau whatsapp ke no
@@ -471,7 +471,7 @@
                 <div class="row">
                     <div class="col-md-12 text-end">
                         <p>
-                            © Copyright 2025 Susan Salon. All rights
+                            © Copyright 2025 Yanti Kebaya. All rights
                             reserved.
                         </p>
                     </div>
