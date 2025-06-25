@@ -32,6 +32,7 @@ class RentalController extends Controller
             'return_date' => 'nullable|date|after_or_equal:rental_date',
             'user_phone' => 'required|string',
             'user_address' => 'required|string',
+            'user_name' => 'required|string',
         ]);
 
         // Hitung jumlah hari sewa
@@ -40,11 +41,13 @@ class RentalController extends Controller
         $days = $rentalDate->diffInDays($returnDate);
         $days = $days > 0 ? $days : 1; // minimal 1 hari sewa
 
-        // Ambil semua dress yang dipilih
+        // Ambil semua dress yang dipilih dan quantity dari request
+        $quantities = $request->input('quantities', []);
         $dresses = Dress::whereIn('id', $validated['dresses'])->get();
 
-        // Ubah menjadi array data lengkap
-        $dressData = $dresses->map(function ($dress) {
+        // Ubah menjadi array data lengkap dengan quantity
+        $dressData = $dresses->map(function ($dress) use ($quantities) {
+            $qty = isset($quantities[$dress->id]) ? (int)$quantities[$dress->id] : 1;
             return [
                 'id' => $dress->id,
                 'name' => $dress->name,
@@ -54,13 +57,15 @@ class RentalController extends Controller
                 'status' => $dress->status,
                 'description' => $dress->description,
                 'image_path' => $dress->image_path,
+                'quantity' => $qty,
             ];
         })->toArray();
 
         // Hitung total harga
         $totalPrice = 0;
         foreach ($dresses as $dress) {
-            $totalPrice += ($dress->rental_price * $days);
+            $qty = isset($quantities[$dress->id]) ? (int)$quantities[$dress->id] : 1;
+            $totalPrice += ($dress->rental_price * $days * $qty);
         }
 
         // Simpan data rental
@@ -69,23 +74,23 @@ class RentalController extends Controller
             'rental_date' => $validated['rental_date'],
             'return_date' => $validated['return_date'],
             'total_price' => $totalPrice,
-            'user_name' => auth()->user()->name ?? 'Guest',
+            'user_name' => $validated['user_name'],
             'user_phone' => $validated['user_phone'],
             'user_address' => $validated['user_address'],
         ]);
 
-        // Kurangi stok setiap dress yang disewa
+        // Kurangi stok setiap dress sesuai quantity yang disewa
         foreach ($dresses as $dress) {
-            $dress->decrement('stock', 1);
+            $qty = isset($quantities[$dress->id]) ? (int)$quantities[$dress->id] : 1;
+            $dress->decrement('stock', $qty);
         }
 
-        // Update semua dress menjadi unavailable
-        // foreach ($dresses as $dress) {
-        //     $dress->status = 'unavailable';
-        //     $dress->save();
-        // }
-
-        return redirect()->route('rentals.index')->with('success', 'Penyewaan berhasil dibuat.');
+        // Redirect ke detail rental public setelah submit
+        if (Auth::check()) {
+            return redirect()->route('rentals.show', $rental->id)->with('success', 'Penyewaan berhasil dibuat.');
+        } else {
+            return redirect()->route('public.rental.show', $rental->id)->with('success', 'Penyewaan berhasil dibuat.');
+        }
     }
 
     public function show(Rental $rental)
@@ -107,12 +112,13 @@ class RentalController extends Controller
 
         $rental->update($validated);
 
-        // Jika rental selesai atau dibatalkan, kembalikan stok dress
+        // Jika rental selesai atau dibatalkan, kembalikan stok dress sesuai quantity
         if (in_array($validated['status'], ['selesai', 'batal'])) {
             $dresses = is_array($rental->dresses) ? $rental->dresses : json_decode($rental->dresses, true);
             if (!empty($dresses) && is_array($dresses)) {
                 foreach ($dresses as $dress) {
-                    \App\Models\Dress::where('id', $dress['id'])->increment('stock', 1);
+                    $qty = isset($dress['quantity']) ? (int)$dress['quantity'] : 1;
+                    \App\Models\Dress::where('id', $dress['id'])->increment('stock', $qty);
                 }
             }
         }

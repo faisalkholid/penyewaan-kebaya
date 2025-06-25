@@ -7,11 +7,11 @@
     <div class="d-flex justify-content-between align-items-center mb-3">
         <div class="d-flex align-items-center gap-2">
             <h1 class="m-0">Daftar Baju</h1>
-            <a href="{{ route('dresses.create') }}"
+            <!-- <a href="{{ route('dresses.create') }}"
                 class="btn btn-primary d-flex align-items-center justify-content-center"
                 style="width: 36px; height: 36px; margin-left: 4px;">
                 <i class="bi bi-plus-lg"></i>
-            </a>
+            </a> -->
         </div>
         <div class="d-flex align-items-center gap-2">
             <div class="d-flex small text-muted" style="align-items: center;">
@@ -38,6 +38,12 @@
             {{ session('success') }}
         </div>
     @endif
+
+     <a href="{{ route('dresses.create') }}"
+        class="btn btn-primary d-flex align-items-center justify-content-center"
+        style="width: 255px; margin-bottom: 15px;">
+        <i class="bi bi-plus-lg" style="margin-right: 8px;"></i> Tambah Baju
+    </a>
 
     @if ($dresses->isEmpty())
         <div class="alert alert-info">
@@ -121,7 +127,7 @@
                             </p>
                         </div>
                         <div class="card-footer text-center">
-                            <a href="{{ route('dresses.show', $dress) }}" class="btn btn-sm btn-info">Open</a>
+                            <a href="{{ route('dresses.show', $dress) }}" class="btn btn-sm btn-info">Detail</a>
                             <a href="{{ route('dresses.edit', $dress) }}" class="btn btn-sm btn-warning">Edit</a>
                             <form action="{{ route('dresses.destroy', $dress) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus baju ini?')">
                                 @csrf

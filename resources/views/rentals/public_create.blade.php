@@ -2,12 +2,13 @@
 
 @section('content')
 <div class="container mt-2">
-    <div class="d-flex justify-content-between align-items-center mb-3">
-        <h1>Tambah Penyewaan</h1>
-        <a href="{{ route('rentals.index') }}" class="btn btn-secondary">Kembali</a>
-    </div>
+    <!-- <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1>Form Sewa Baju</h1>
+        <a href="/" class="btn btn-secondary">Kembali</a>
+    </div> -->
 
-    <form action="{{ route('rentals.store') }}" method="POST">
+    <h3 class="mb-5 text-center">Form Sewa Kebaya</h3>
+    <form action="{{ route('public.rental.store') }}" method="POST">
         @csrf
         <div class="mb-3">
             <div class="row">
@@ -15,6 +16,19 @@
                     <label for="user_name" class="form-label">Nama Penyewa</label>
                     <input type="text" name="user_name" id="user_name" class="form-control" required>
                 </div>
+                <div class="col">
+                    <label for="user_phone" class="form-label">Nomor Telepon (Whatsapp)</label>
+                    <input type="text" name="user_phone" id="user_phone" class="form-control" required placeholder="081xxx">
+                </div>
+                <div class="col">
+                    <label for="user_address" class="form-label">Alamat Penyewa</label>
+                    <input type="text" name="user_address" id="user_address" class="form-control" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="row">
                 <div class="col">
                     <label for="rental_date" class="form-label">Tanggal Sewa</label>
                     <input type="date" name="rental_date" id="rental_date" class="form-control" required>
@@ -26,19 +40,6 @@
                 <div class="col">
                     <label for="total_price" class="form-label">Total Harga</label>
                     <input type="number" name="total_price" id="total_price" class="form-control" disabled readonly value="0">
-                </div>
-            </div>
-        </div>
-
-        <div class="mb-3">
-            <div class="row">
-                <div class="col">
-                    <label for="user_address" class="form-label">Alamat Penyewa</label>
-                    <textarea name="user_address" id="user_address" class="form-control" rows="3" required></textarea>
-                </div>
-                <div class="col">
-                    <label for="user_phone" class="form-label">Nomor Telepon (Whatsapp)</label>
-                    <input type="text" name="user_phone" id="user_phone" class="form-control" required placeholder="081xxx">
                 </div>
             </div>
         </div>
@@ -79,7 +80,10 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary">Simpan</button>
+        <div class="d-flex justify-content-start gap-2">
+            <a href="/" class="btn btn-secondary">Batal</a>
+            <button type="submit" class="btn btn-primary">Sewa</button>
+        </div>
     </form>
 </div>
 @endsection

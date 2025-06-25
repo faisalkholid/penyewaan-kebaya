@@ -26,27 +26,27 @@
 
 <body>
     <div id="app">
+        @auth
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container-fluid">
                 <!-- <a class="navbar-brand fw-bold" href="{{ url('/home') }}">
                     Kebaya Rental
                 </a> -->
                 <div class="d-flex align-items-center ms-auto">
-                    @auth
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-inline">
                         @csrf
                         <button type="submit" class="btn btn-outline-danger">Logout</button>
                     </form>
-                    @endauth
                 </div>
             </div>
         </nav>
+        @endauth
         <div class="container-fluid min-vh-100 bg-light p-0">
             <div class="row g-0">
                 @auth
                     @include('layouts.sidebar')
                 @endauth
-                <div class="col-md-10 ms-sm-auto px-md-5 py-4">
+                <div class="@auth col-md-10 ms-sm-auto @endauth px-md-5 py-4">
                     @yield('content')
                 </div>
             </div>

@@ -79,10 +79,10 @@ class DressController extends Controller
             'rental_price' => 'required|numeric|min:0',
             'status' => 'required|in:tersedia,tidak tersedia,perawatan',
             'description' => 'nullable|string',
-            'image' => 'required|image|mimes:jpeg,png|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png|max:2048',
         ]);
 
-        // Upload file
+        // Upload file if present
         if ($request->hasFile('image')) {
             $path = $request->file('image')->store('dresses', 'public');
             $validated['image_path'] = $path;

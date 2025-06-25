@@ -39,10 +39,6 @@
                 <path fill="currentColor"
                     d="m14.478 1.5l.5-.033a.5.5 0 0 0-.871-.301l.371.334Zm-.498 2.959a.5.5 0 1 0-1 0h1Zm-6.49.082h-.5h.5Zm0 .959h.5h-.5Zm-6.99 7V12a.5.5 0 0 0-.278.916L.5 12.5Zm.998-11l.469-.175a.5.5 0 0 0-.916-.048l.447.223Zm3.994 9l.354.353a.5.5 0 0 0-.195-.827l-.159.474Zm7.224-8.027l-.37.336l.18.199l.265-.04l-.075-.495Zm1.264-.94c.051.778.003 1.25-.123 1.606c-.122.345-.336.629-.723 1l.692.722c.438-.42.776-.832.974-1.388c.193-.546.232-1.178.177-2.006l-.998.066Zm0 3.654V4.46h-1v.728h1Zm-6.99-.646V5.5h1v-.959h-1Zm0 .959V6h1v-.5h-1ZM10.525 1a3.539 3.539 0 0 0-3.537 3.541h1A2.539 2.539 0 0 1 10.526 2V1Zm2.454 4.187C12.98 9.503 9.487 13 5.18 13v1c4.86 0 8.8-3.946 8.8-8.813h-1ZM1.03 1.675C1.574 3.127 3.614 6 7.49 6V5C4.174 5 2.421 2.54 1.966 1.325l-.937.35Zm.021-.398C.004 3.373-.157 5.407.604 7.139c.759 1.727 2.392 3.055 4.73 3.835l.317-.948c-2.155-.72-3.518-1.892-4.132-3.29c-.612-1.393-.523-3.11.427-5.013l-.895-.446Zm4.087 8.87C4.536 10.75 2.726 12 .5 12v1c2.566 0 4.617-1.416 5.346-2.147l-.708-.706Zm7.949-8.009A3.445 3.445 0 0 0 10.526 1v1c.721 0 1.37.311 1.82.809l.74-.671Zm-.296.83a3.513 3.513 0 0 0 2.06-1.134l-.744-.668a2.514 2.514 0 0 1-1.466.813l.15.989ZM.222 12.916C1.863 14.01 3.583 14 5.18 14v-1c-1.63 0-3.048-.011-4.402-.916l-.556.832Z" />
             </symbol>
-            <symbol xmlns="http://www.w3.org/2000/svg" id="pinterest" viewBox="0 0 15 15">
-                <path fill="none" stroke="currentColor"
-                    d="m4.5 13.5l3-7m-3.236 3a2.989 2.989 0 0 1-.764-2V7A3.5 3.5 0 0 1 7 3.5h1A3.5 3.5 0 0 1 11.5 7v.5a3 3 0 0 1-3 3a2.081 2.081 0 0 1-1.974-1.423L6.5 9m1 5.5a7 7 0 1 1 0-14a7 7 0 0 1 0 14Z" />
-            </symbol>
             <symbol xmlns="http://www.w3.org/2000/svg" id="youtube" viewBox="0 0 15 15">
                 <path fill="currentColor"
                     d="m1.61 12.738l-.104.489l.105-.489Zm11.78 0l.104.489l-.105-.489Zm0-10.476l.104-.489l-.105.489Zm-11.78 0l.106.489l-.105-.489ZM6.5 5.5l.277-.416A.5.5 0 0 0 6 5.5h.5Zm0 4H6a.5.5 0 0 0 .777.416L6.5 9.5Zm3-2l.277.416a.5.5 0 0 0 0-.832L9.5 7.5ZM0 3.636v7.728h1V3.636H0Zm15 7.728V3.636h-1v7.728h1ZM1.506 13.227c3.951.847 8.037.847 11.988 0l-.21-.978a27.605 27.605 0 0 1-11.568 0l-.21.978ZM13.494 1.773a28.606 28.606 0 0 0-11.988 0l.21.978a27.607 27.607 0 0 1 11.568 0l.21-.978ZM15 3.636c0-.898-.628-1.675-1.506-1.863l-.21.978c.418.09.716.458.716.885h1Zm-1 7.728a.905.905 0 0 1-.716.885l.21.978A1.905 1.905 0 0 0 15 11.364h-1Zm-14 0c0 .898.628 1.675 1.506 1.863l.21-.978A.905.905 0 0 1 1 11.364H0Zm1-7.728c0-.427.298-.796.716-.885l-.21-.978A1.905 1.905 0 0 0 0 3.636h1ZM6 5.5v4h1v-4H6Zm.777 4.416l3-2l-.554-.832l-3 2l.554.832Zm3-2.832l-3-2l-.554.832l3 2l.554-.832Z" />
@@ -180,10 +176,10 @@
                                         aria-expanded="false">Beranda</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="koleksi.html">Koleksi</a>
+                                    <a class="nav-link" href="#new-arrival">Koleksi</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Kontak</a>
+                                    <a class="nav-link" href="#footer">Kontak</a>
                                 </li>
                             </ul>
                         </div>
@@ -193,9 +189,9 @@
                 <div class="col-auto">
                     <ul class="list-unstyled d-flex m-0">
                         <li>
-                            <a href="/login" class="mx-2">
-                                Login
-                            </a>
+                            <!-- <a href="/sewa" class="mx-2">
+                                Sewa
+                            </a> -->
                         </li>
                     </ul>
                 </div>
@@ -245,8 +241,9 @@
                 SUSAN SALON
             </h1>
             <p data-aos="fade-up" style="color: white" data-aos-delay="300">
-                Penyewaan baju adat
+                Penyewaan Baju Adat
             </p>
+            <a href="/sewa" class="btn btn-primary btn-lg px-5 py-3 mt-3" style="font-size: 1.5rem;">Sewa Sekarang</a>
         </div>
     </section>
 
@@ -294,20 +291,26 @@
         <div class="container">
             <div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
                 <h4 class="text-uppercase">Koleksi Baju</h4>
-                <a href="koleksi.html" class="btn-link">Lihat Semua</a>
+                <!-- <a href="koleksi.html" class="btn-link">Lihat Semua</a> -->
             </div>
             <div class="swiper product-swiper open-up" data-aos="zoom-out">
+                <style>
+                    .product-swiper .product-image {
+                        width: 220px;
+                        height: 300px;
+                        object-fit: cover;
+                        margin: 0 auto;
+                        display: block;
+                    }
+                </style>
                 <div class="swiper-wrapper d-flex">
                     <div class="swiper-slide">
                         <div class="product-item">
                             <div class="image-holder position-relative">
-                                <a href="index.html">
-                                    <img src="images/product-item-1.jpg" alt="categories"
-                                        class="product-image img-fluid" />
-                                </a>
+                                <img src="images/dress1.jpeg" alt="categories" class="product-image img-fluid" />
                                 <div class="product-content">
                                     <h5 class="element-title text-uppercase fs-5 mt-3">
-                                        <a href="index.html">Kebaya Sasak</a>
+                                        Kebaya Sasak
                                     </h5>
                                     <a class="text-decoration-none"><span>Rp. 30.000</span></a>
                                 </div>
@@ -317,13 +320,10 @@
                     <div class="swiper-slide">
                         <div class="product-item">
                             <div class="image-holder position-relative">
-                                <a href="index.html">
-                                    <img src="images/product-item-2.jpg" alt="categories"
-                                        class="product-image img-fluid" />
-                                </a>
+                                <img src="images/dress2.jpeg" alt="categories" class="product-image img-fluid" />
                                 <div class="product-content">
                                     <h5 class="text-uppercase fs-5 mt-3">
-                                        <a href="index.html">Sasak Baju Lambung</a>
+                                       Sasak Baju Lambung
                                     </h5>
                                     <a class="text-decoration-none"><span>Rp. 25.000</span></a>
                                 </div>
@@ -333,13 +333,10 @@
                     <div class="swiper-slide">
                         <div class="product-item">
                             <div class="image-holder position-relative">
-                                <a href="index.html">
-                                    <img src="images/product-item-3.jpg" alt="categories"
-                                        class="product-image img-fluid" />
-                                </a>
+                                <img src="images/dress3.jpeg" alt="categories" class="product-image img-fluid" />
                                 <div class="product-content">
                                     <h5 class="text-uppercase fs-5 mt-3">
-                                        <a href="index.html">Baju Adat Sasak Cowok</a>
+                                        Baju Adat Sasak Cowok
                                     </h5>
                                     <a class="text-decoration-none"><span>Rp. 35.000</span></a>
                                 </div>
@@ -349,13 +346,10 @@
                     <div class="swiper-slide">
                         <div class="product-item">
                             <div class="image-holder position-relative">
-                                <a href="index.html">
-                                    <img src="images/product-item-4.jpg" alt="categories"
-                                        class="product-image img-fluid" />
-                                </a>
+                                <img src="images/dress4.jpeg" alt="categories" class="product-image img-fluid" />
                                 <div class="product-content">
                                     <h5 class="text-uppercase fs-5 mt-3">
-                                        <a href="index.html">Capuk Nyongkolan</a>
+                                        Capuk Nyongkolan
                                     </h5>
                                     <a class="text-decoration-none"><span>Rp. 15.000</span></a>
                                 </div>

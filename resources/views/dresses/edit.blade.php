@@ -59,7 +59,7 @@
 
         <div class="mb-3">
             <label for="image" class="form-label">Foto Baju (JPG/PNG)</label>
-            <input type="file" class="form-control" id="image" name="image" accept="image/jpeg,image/png" required>
+            <input type="file" class="form-control" id="image" name="image" accept="image/jpeg,image/png">
             @if ($dress->image_path)
                 <img src="{{ asset('storage/' . $dress->image_path) }}" alt="Current Image" class="img-thumbnail mt-2" width="150">
             @endif
