@@ -310,7 +310,7 @@
                                 <img src="images/dress1.jpeg" alt="categories" class="product-image img-fluid" />
                                 <div class="product-content">
                                     <h5 class="element-title text-uppercase fs-5 mt-3">
-                                        Kebaya Sasak
+                                        Kebaya Adat Sasak
                                     </h5>
                                     <a class="text-decoration-none"><span>Rp. 30.000</span></a>
                                 </div>
@@ -323,7 +323,7 @@
                                 <img src="images/dress2.jpeg" alt="categories" class="product-image img-fluid" />
                                 <div class="product-content">
                                     <h5 class="text-uppercase fs-5 mt-3">
-                                       Sasak Baju Lambung
+                                       Kebaya Adat Jawa
                                     </h5>
                                     <a class="text-decoration-none"><span>Rp. 25.000</span></a>
                                 </div>
@@ -336,7 +336,7 @@
                                 <img src="images/dress3.jpeg" alt="categories" class="product-image img-fluid" />
                                 <div class="product-content">
                                     <h5 class="text-uppercase fs-5 mt-3">
-                                        Baju Adat Sasak Cowok
+                                        Kebaya Adat Sunda
                                     </h5>
                                     <a class="text-decoration-none"><span>Rp. 35.000</span></a>
                                 </div>
@@ -349,7 +349,7 @@
                                 <img src="images/dress4.jpeg" alt="categories" class="product-image img-fluid" />
                                 <div class="product-content">
                                     <h5 class="text-uppercase fs-5 mt-3">
-                                        Capuk Nyongkolan
+                                        Kebaya Adat Bali
                                     </h5>
                                     <a class="text-decoration-none"><span>Rp. 15.000</span></a>
                                 </div>
