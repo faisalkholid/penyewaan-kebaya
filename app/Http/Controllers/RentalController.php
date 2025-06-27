@@ -45,22 +45,6 @@ class RentalController extends Controller
         $quantities = $request->input('quantities', []);
         $dresses = Dress::whereIn('id', $validated['dresses'])->get();
 
-        // Ubah menjadi array data lengkap dengan quantity
-        $dressData = $dresses->map(function ($dress) use ($quantities) {
-            $qty = isset($quantities[$dress->id]) ? (int)$quantities[$dress->id] : 1;
-            return [
-                'id' => $dress->id,
-                'name' => $dress->name,
-                'size' => $dress->size,
-                'category' => $dress->category,
-                'rental_price' => $dress->rental_price,
-                'status' => $dress->status,
-                'description' => $dress->description,
-                'image_path' => $dress->image_path,
-                'quantity' => $qty,
-            ];
-        })->toArray();
-
         // Hitung total harga
         $totalPrice = 0;
         foreach ($dresses as $dress) {
@@ -70,14 +54,30 @@ class RentalController extends Controller
 
         // Simpan data rental
         $rental = Rental::create([
-            'dresses' => json_encode($dressData),
             'rental_date' => $validated['rental_date'],
             'return_date' => $validated['return_date'],
             'total_price' => $totalPrice,
             'user_name' => $validated['user_name'],
             'user_phone' => $validated['user_phone'],
             'user_address' => $validated['user_address'],
+            'status' => 'pengajuan',
         ]);
+
+        // Simpan detail rental
+        foreach ($dresses as $dress) {
+            $qty = isset($quantities[$dress->id]) ? (int)$quantities[$dress->id] : 1;
+            $rental->details()->create([
+                'dress_id' => $dress->id,
+                'name' => $dress->name,
+                'size' => $dress->size,
+                'category' => $dress->category,
+                'rental_price' => $dress->rental_price,
+                'quantity' => $qty,
+                'status' => $dress->status,
+                'description' => $dress->description,
+                'image_path' => $dress->image_path,
+            ]);
+        }
 
         // Kurangi stok setiap dress sesuai quantity yang disewa
         foreach ($dresses as $dress) {

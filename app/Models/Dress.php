@@ -30,4 +30,12 @@ class Dress extends Model
         'rental_price' => 'decimal:2',
         'stock' => 'integer',
     ];
+
+    /**
+     * Get the rental details for the dress.
+     */
+    public function rentalDetails()
+    {
+        return $this->hasMany(RentalDetail::class);
+    }
 }

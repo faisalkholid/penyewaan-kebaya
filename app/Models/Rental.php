@@ -4,14 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Dress;
+use App\Models\RentalDetail;
 
 class Rental extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'dresses',
         'rental_date',
         'return_date',
         'status',
@@ -20,4 +19,9 @@ class Rental extends Model
         'user_phone',
         'user_address',
     ];
+
+    public function details()
+    {
+        return $this->hasMany(RentalDetail::class);
+    }
 }

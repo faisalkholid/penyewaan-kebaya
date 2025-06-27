@@ -44,8 +44,8 @@
                     <td>{{ $loop->iteration }}</td>
                     <td>
                         <ul class="mb-0">
-                            @foreach (json_decode($rental->dresses) as $dress)
-                                <li>{{ $dress->name }} ({{ $dress->size }}) - {{ $dress->quantity ?? 1 }} pcs</li>
+                            @foreach ($rental->details as $detail)
+                                <li>{{ $detail->name }} ({{ $detail->size }}) - {{ $detail->quantity ?? 1 }} pcs</li>
                             @endforeach
                         </ul>
                     </td>

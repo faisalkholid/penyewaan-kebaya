@@ -2,11 +2,6 @@
 
 @section('content')
 <div class="container mt-2">
-    <!-- <div class="d-flex justify-content-between align-items-center mb-3">
-        <h1>Form Sewa Baju</h1>
-        <a href="/" class="btn btn-secondary">Kembali</a>
-    </div> -->
-
     <h3 class="mb-5 text-center">Form Sewa Kebaya</h3>
     <form action="{{ route('public.rental.store') }}" method="POST">
         @csrf
@@ -166,7 +161,6 @@
 
                 returnDateInput.setAttribute('min', nextDay);
 
-                // Optional: if return date is before new min, reset it
                 if (returnDateInput.value < nextDay) {
                     returnDateInput.value = nextDay;
                 }

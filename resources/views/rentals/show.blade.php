@@ -25,28 +25,21 @@
                             <div class="mb-3">
                                 <h5 class="fw-bold mb-3 text-center">Daftar Baju</h5>
                                 <div class="d-flex flex-wrap gap-3">
-                                    @php
-                                        $dresses = is_array($rental->dresses) ? $rental->dresses : json_decode($rental->dresses, true);
-                                    @endphp
-                                    @if(!empty($dresses) && is_array($dresses))
-                                        @foreach($dresses as $dress)
-                                            <div class="card border-0 shadow-sm" style="width: 120px;">
-                                                @if(!empty($dress['image_path']))
-                                                    <img src="{{ asset('storage/' . $dress['image_path']) }}" class="card-img-top rounded" alt="{{ $dress['name'] }}" style="height: 120px; object-fit: cover;">
-                                                @else
-                                                    <div class="bg-light d-flex align-items-center justify-content-center" style="height: 120px;">
-                                                        <span class="text-muted">No Image</span>
-                                                    </div>
-                                                @endif
-                                                <div class="card-body p-2">
-                                                    <div class="text-center small fw-semibold">{{ $dress['name'] }}</div>
-                                                    <div class="text-center text-muted small">{{ $dress['category'] }}</div>
+                                    @foreach($rental->details as $detail)
+                                        <div class="card border-0 shadow-sm" style="width: 120px;">
+                                            @if(!empty($detail->image_path))
+                                                <img src="{{ asset('storage/' . $detail->image_path) }}" class="card-img-top rounded" alt="{{ $detail->name }}" style="height: 120px; object-fit: cover;">
+                                            @else
+                                                <div class="bg-light d-flex align-items-center justify-content-center" style="height: 120px;">
+                                                    <span class="text-muted">No Image</span>
                                                 </div>
+                                            @endif
+                                            <div class="card-body p-2">
+                                                <div class="text-center small fw-semibold">{{ $detail->name }}</div>
+                                                <div class="text-center text-muted small">{{ $detail->category }}</div>
                                             </div>
-                                        @endforeach
-                                    @else
-                                        <span class="text-muted">Tidak ada dress</span>
-                                    @endif
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
